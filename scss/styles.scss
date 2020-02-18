@@ -1,0 +1,55 @@
+//import sass files
+@import "reset";
+@import "variables";
+@import "mixins";
+
+//start main nav
+#main-nav {
+    background: $deepBlue;
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        float: left;
+        width: 40%;
+    }
+
+    a {
+        color: $offWhite;
+        text-decoration: none;
+        padding: 16px;
+        display: block;
+        text-align: center;
+    }
+}
+
+//end main nav
+
+//clear fix
+#main-nav ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section h1 {
+    font-size: $sctionHeading;
+    color: $deepBlue;
+}
+
+.lead-banner {
+    @include banner;
+    text-align: right;
+}
+
+.lessons-banner {
+    @include banner;
+
+    li {
+        text-transform: uppercase;
+        font-size: 20px;
+        max-width: 500px;
+    }
+}
