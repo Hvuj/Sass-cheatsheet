@@ -9,11 +9,16 @@
 
     ul {
         width: 100%;
+        @include clearFix;
     }
 
     li {
         float: left;
-        width: 40%;
+        width: (100% / 7);
+
+        @include mQ(600px) {
+            width: 100%;
+        }
     }
 
     a {
@@ -22,17 +27,14 @@
         padding: 16px;
         display: block;
         text-align: center;
+
+        &:hover {
+            background: lighten($deepBlue, 6);
+        }
     }
 }
 
 //end main nav
-
-//clear fix
-#main-nav ul:after {
-    content: "";
-    display: block;
-    clear: both;
-}
 
 section h1 {
     font-size: $sctionHeading;
@@ -51,5 +53,45 @@ section h1 {
         text-transform: uppercase;
         font-size: 20px;
         max-width: 500px;
+        margin: auto;
+    }
+}
+
+//content style
+#services {
+    margin-bottom: 60px;
+
+    li {
+        float: left;
+        box-sizing: border-box;
+        text-align: center;
+        width: (100%/3)
+    }
+
+    img {
+        width: 60%;
+        margin: 20px 20%;
+    }
+
+    a {
+        text-decoration: none;
+        color: $deepBlue;
+        font-weight: bold;
+
+        &:hover {
+            color: complement($deepBlue);
+        }
+    }
+
+    ul {
+        @include clearFix;
+    }
+}
+
+#projects li {
+    @include grid(4, 2%);
+
+    img {
+        width: 100%;
     }
 }
